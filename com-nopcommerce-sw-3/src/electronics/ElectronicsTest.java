@@ -258,6 +258,10 @@ public class ElectronicsTest extends BaseTest {
         WebElement logOut = driver.findElement(By.className("ico-logout"));
         logOut.click();
 //        2.44 Verify the URL is “https://demo.nopcommerce.com/”
+        String currentUrl = driver.getCurrentUrl();
+        System.out.println(currentUrl);
+        String expectedUrl = baseUrl;
+        Assert.assertEquals(currentUrl,expectedUrl);
     }
     @After
     public void endTest(){
